@@ -1,0 +1,14 @@
+.bg-primary{
+    background: #477091;
+}
+span{
+    color: #333;
+    font-size: 1.8rem;
+}
+.container-costomize{
+    margin: 0 2rem;
+}
+.container-custom{
+    width: 80%;
+    margin: auto;
+}

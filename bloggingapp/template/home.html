@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+
+{%block title%} Welcome to PIblogs {%endblock%}
+
+{%block content%}
+
+
+<div class="containe-custom">
+    <div class="owl-carousel">
+        {% for cat in cats %}
+         
+        <div class="card" style="max-height: 30vh;">
+            <div class="img-container">
+                <img src="/media/{{cat.image}}" class="responsive-img" alt="" style="max-height: 20vh;">
+            </div>
+            <div class="card-content" >
+                <div class="card-title center-align " style="font-size: 1rem;">
+                    <strong>{{cat.title}}</strong>
+                    <a href="/category/{{cat.url}}" class="btn bg-primary">View</a>
+                </div>
+
+                <div class="container center-align">
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        {%endfor%}
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+
+            {%for p in posts %}
+
+            <div class="row">
+
+                <div class="col s12 m8">
+                    {{p.content| truncatewords:60 |safe }}
+
+                    <div style="margin-top: 20px;">
+                        <a href="/blog/{{p.url}}" class="btn bg-primary">Read More..</a>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <img src="/media/{{p.image}}" class="responsive-img" style="margin-top: 50px;" alt="">
+                </div>
+            </div>
+            {%endfor %}
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+{%endblock%}
